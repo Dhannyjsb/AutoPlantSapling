@@ -13,8 +13,9 @@ public class Main extends JavaPlugin{
 	 public Material materi;
 	 private byte data;
 	 
+	 @Override
 	 public void onEnable() {
-		 this.saveDefaultConfig();
+		// this.saveDefaultConfig();
 		 this.materi = Material.SAPLING;
 		 this.data = -1;
 	 }
@@ -23,8 +24,7 @@ public class Main extends JavaPlugin{
 	 
 	 }
 	
-	 @SuppressWarnings("deprecation")
-	public void run() {
+	 public void run() {
 		 Material below = this.block.getRelative(BlockFace.DOWN).getType();
 		 	if  (below == Material.DIRT || below == Material.GRASS){
 		 		 this.block.setType(materi);
